@@ -21,7 +21,6 @@ class CommentRemover extends Component{
 
     const input = this.state.input;
     const inputLines = input.split('\n');
-    console.log(inputLines);
     const strippedInput = inputLines.filter((line) => {
       return !(line.startsWith('#'));
     }).filter((line) => {
@@ -41,8 +40,8 @@ class CommentRemover extends Component{
   render() {
     return (
       <div>
-        <h5>POE Loot Filter Comment Remover</h5>
-        <textarea className="u-full-width" rows="12" placeholder="Paste Loot Filter Here" value={this.state.input} onChange={this.handleInput}></textarea>
+        <h5>Comment Remover</h5>
+        <textarea className="u-full-width" rows="12" placeholder="Paste Item Filter Here" value={this.state.input} onChange={this.handleInput}></textarea>
         <button className="button-primary u-full-width" onClick={this.process}>Process</button>
         <textarea className="u-full-width" rows="12" placeholder="FIlter with comments removed ends up here" value={this.state.output}></textarea>
       </div>
