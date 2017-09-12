@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {minify} from './util'
 
 class CommentRemover extends Component{
   constructor(props) {
@@ -17,24 +18,11 @@ class CommentRemover extends Component{
   }
 
   process(event){
-    const re = /^(.*?)\s*#.*$/;
-
     const input = this.state.input;
-    const inputLines = input.split('\n');
-    const strippedInput = inputLines.filter((line) => {
-      return !(line.startsWith('#'));
-    }).filter((line) => {
-      return line;
-    }).map((line) => {
-      let match = line.match(re);
-      if(match === null){
-        return line;
-      }else{
-        return match[1];
-      }
-    });
 
-    this.setState({output: strippedInput.join('\n')});
+    const strippedInput = minify(input);
+
+    this.setState({output: strippedInput});
   }
 
   render() {

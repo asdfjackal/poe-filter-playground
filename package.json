@@ -4,11 +4,13 @@
   "private": true,
   "homepage": "https://asdfjackal.github.io/poe-filter-playground",
   "dependencies": {
+    "checksum": "^0.1.1",
     "gh-pages": "^1.0.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-router-dom": "^4.2.2",
-    "react-scripts": "1.0.13"
+    "react-scripts": "1.0.13",
+    "request": "^2.81.0"
   },
   "scripts": {
     "predeploy": "npm run build",
